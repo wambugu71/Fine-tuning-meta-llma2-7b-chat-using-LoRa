@@ -23,9 +23,10 @@ The formula for computing the low-rank decomposition is:
 
 
 where:
-> $ W0$ is the pre-trained weight matrix
+> $W_0$ is the pre-trained weight matrix
  $∆W$ is the accumulated gradient update during adaptation
  $r$ is the rank of the LoRA module, a number that you can tune during training
-$W0$ is frozen during training while $A$ and $B$ contain the trainable parameters. $A $is initialized using a random Gaussian while $ B$ is set to zero at the beginning of training. For simplicity, LoRA is only applied to the query and value matrices of the transformer, meaning that the multi-layer perceptron is frozen and only the attention weights are adapted.
+$W_0$ is frozen during training while $A$ and $B$ contain the trainable parameters. $A $is initialized using a random Gaussian while $B$ is set to zero at the beginning of training. For simplicity, LoRA is only applied to the query and value matrices of the transformer, meaning that the multi-layer perceptron is frozen and only the attention weights are adapted.
 
-> In LoRA a small set of trainable parameters–adapters– are introduced in the model while the pre-trained weights remain frozen. The loss function is optimized by passing the gradient through the frozen model into the adapters.
+> In `LoRA` a small set of trainable parameters–adapters– are introduced in the model while the pre-trained weights remain frozen. The loss function is optimized by passing the gradient through the frozen model into the adapters.
+` inspired by: derrick from MLnuggets` 
